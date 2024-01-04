@@ -4,24 +4,25 @@ endif
 let g:loaded_lightline_settings = 1
 
 let g:lightline = extend(get(g:, 'lightline', {}), {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'powerline',
   \ 'mode_map': {'c': 'NORMAL'},
   \ 'active': {
-    \ 'left': [ [ 'mode', 'paste', 'readonly'],
-    \           [ 'gbranch', 'filename'] ],
-    \ 'right': [ [ 'lineinfo' ],
-    \            [ 'percent' ],
-    \            [ 'filefmt-enc', 'filetype'] ]
+    \ 'left' : [['mode', 'paste', 'readonly'],
+    \           ['hostname', 'gbranch', 'filename']],
+    \ 'right': [['lineinfo'],
+    \           ['percent'],
+    \           ['filefmt-enc', 'filetype']]
     \ },
   \ 'inactive': {
-    \ 'left': [ [ 'filename'] ],
-    \ 'right': [ [ 'lineinfo' ],
-    \            [ 'percent' ] ] },
+    \ 'left' : [['filename']],
+    \ 'right': [['lineinfo'],
+    \           ['percent']] },
   \ 'component_function': {
       \   'filefmt-enc': 'llsettings#filefmtenc',
-      \   'readonly': 'llsettings#readonly',
-      \   'gbranch': 'llsettings#git_branch',
-      \   'filename': 'llsettings#filename',
+      \   'readonly'   : 'llsettings#readonly',
+      \   'gbranch'    : 'llsettings#git_branch',
+      \   'filename'   : 'llsettings#filename',
+      \   'hostname'   : 'llsettings#hostname',
       \ },
 \ }, 'keep')
 
